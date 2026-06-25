@@ -7,6 +7,11 @@ import {
 } from "lucide-react";
 
 import { motion } from "framer-motion";
+import logoAhotel from "./assets/logos/ahotel.png";
+import logoVillageTokri from "./assets/logos/villagetokri.png";
+import logoDhiti from "./assets/logos/dhiti-logo.png";
+import leaderVidya from "./assets/photos/leader-vidya.jpg";
+import leaderPrajakta from "./assets/photos/leader-prajakta.jpg";
 import imgProblem from "./assets/photos/problem.jpg";
 import imgStory from "./assets/photos/story.jpg";
 import imgServiceData from "./assets/photos/service-data.jpg";
@@ -32,7 +37,7 @@ import logoTechspian from "./assets/logos/techspian.png";
 import logoGuestara from "./assets/logos/guestara.png";
 import logoXeni from "./assets/logos/xeni.png";
 
-const DHITI_LOGOS = [{"name": "Vervotech", "src": logoVervotech, "dark": false}, {"name": "ZentrumHub", "src": logoZentrumHub, "dark": false}, {"name": "Zeal Connect", "src": logoZealConnect, "dark": false}, {"name": "techspian", "src": logoTechspian, "dark": true}, {"name": "guestara", "src": logoGuestara, "dark": false}, {"name": "XENI", "src": logoXeni, "dark": false}];
+const DHITI_LOGOS = [{"name": "Vervotech", "src": logoVervotech, "dark": false}, {"name": "ZentrumHub", "src": logoZentrumHub, "dark": false}, {"name": "Zeal Connect", "src": logoZealConnect, "dark": false}, {"name": "techspian", "src": logoTechspian, "dark": false}, {"name": "guestara", "src": logoGuestara, "dark": false}, {"name": "XENI", "src": logoXeni, "dark": false}, {"name": "@hotel", "src": logoAhotel, "dark": false}, {"name": "Bay Organics", "src": logoVillageTokri, "dark": false}];
 
 
 /* ============================================================
@@ -102,11 +107,8 @@ const IMPACT = [
 ];
 
 const LEADERS = [
-  { name: "Vidya Kolekar", role: "Leader, People & Culture" },
-  { name: "Prajakta Hundare", role: "Leader, Travel Operations" },
-  { name: "Pratiksha Lonkar", role: "Lead, Content Operations" },
-  { name: "Sanket Waykar", role: "Lead, Travel Operations" },
-  { name: "Somnath Gadage", role: "Lead, Admin" },
+  { name: "Vidya Kolekar", role: "Leader, People & Culture", img: leaderVidya },
+  { name: "Prajakta Hundare", role: "Leader, Travel Operations", img: leaderPrajakta },
 ];
 
 const FAQS = [
@@ -215,7 +217,7 @@ export default function DhitiSite() {
       <nav className={"dh-nav" + (scrolled ? " scrolled" : "")}>
         <div className="dh-nav-inner">
           <div className="dh-logo" onClick={go("top")}>
-            <span className="dh-logo-word dh-grad">Dhiti</span>
+            <img src={logoDhiti} alt="Dhiti" className="dh-logo-img" />
             
           </div>
           <div className="dh-links">
@@ -258,7 +260,7 @@ export default function DhitiSite() {
             </p>
             <div className="dh-hero-cta" data-reveal style={{ "--d": 3 }}>
               <motion.a href="#business" className="dh-btn dh-btn-primary" onClick={go("business")} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>Bring your work to us <ArrowUpRight size={18} /></motion.a>
-              <motion.a href="#careers" className="dh-btn dh-btn-ghost" onClick={go("careers")} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>Apply for training <ArrowRight size={17} /></motion.a>
+              <motion.a href="#careers" className="dh-btn dh-btn-glass" onClick={go("careers")} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>Apply for training <ArrowRight size={17} /></motion.a>
             </div>
             <div className="dh-hero-logos" data-reveal style={{ "--d": 4 }}>
               <div className="lbl">Operations we run for our group</div>
@@ -487,8 +489,14 @@ export default function DhitiSite() {
             {LEADERS.map((p, i) => (
               <div className="dh-person" key={p.name} data-reveal style={{ "--d": i }}>
                 <div className="dh-person-ph">
-                  <span className="dh-person-ini">{p.name.split(" ").map((x) => x[0]).join("")}</span>
-                  <span className="dh-person-cam"><Camera size={13} /></span>
+                  {p.img ? (
+                    <img src={p.img} alt={p.name} />
+                  ) : (
+                    <>
+                      <span className="dh-person-ini">{p.name.split(" ").map((x) => x[0]).join("")}</span>
+                      <span className="dh-person-cam"><Camera size={13} /></span>
+                    </>
+                  )}
                 </div>
                 <h3>{p.name}</h3>
                 <span>{p.role}</span>
@@ -572,7 +580,7 @@ export default function DhitiSite() {
           <h2 data-reveal style={{ "--d": 1 }}>Whether you have work, or you are looking for the career that finally fits, there is a place for you here.</h2>
           <div className="dh-cta-btns" data-reveal style={{ "--d": 2 }}>
             <a href="#business" className="dh-btn dh-btn-primary" onClick={go("business")}>Bring your work to us <ArrowUpRight size={18} /></a>
-            <a href="#careers" className="dh-btn dh-btn-ghost" style={{ background: "transparent", color: "#fff", borderColor: "rgba(255,255,255,.25)" }} onClick={go("careers")}>Apply for training <ArrowRight size={17} /></a>
+            <a href="#careers" className="dh-btn dh-btn-ghost" style={{ background: "transparent", color: "#fff", WebkitTextFillColor: "#fff", borderColor: "rgba(255,255,255,.25)" }} onClick={go("careers")}>Apply for training <ArrowRight size={17} /></a>
           </div>
         </div>
       </section>
@@ -583,7 +591,7 @@ export default function DhitiSite() {
           <div className="dh-foot-grid">
             <div>
               <div className="dh-logo">
-                <span className="dh-logo-word dh-grad">Dhiti</span>
+                <img src={logoDhiti} alt="Dhiti" className="dh-logo-img" />
                 
               </div>
               <p className="dh-foot-tag">Building operational work and skilled jobs, from the village outward.</p>
