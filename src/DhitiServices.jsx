@@ -54,7 +54,7 @@ const STATS = [
   { v: 50, suf: "+", l: "people trained and working" },
   { v: 4, suf: "", l: "service lines run end to end" },
   { v: 100, suf: "%", l: "of work passes a quality check" },
-  { v: 6, suf: "", l: "group companies served from day one" },
+  { v: 6, suf: "", l: "brands that trust us" },
 ];
 
 const DHITI_IMAGES = {
@@ -82,7 +82,7 @@ const SERVICES = [
   { idx: "01", Icon: Database, img: DHITI_IMAGES.svc1, tag: "Entry, cataloguing and reconciliation, verified.", shot: "Close-up of hands typing data on a laptop", t: "Data & Back Office Operations", b: "Data entry, cataloguing, document processing and reconciliation, each with a verification step built in. You hand us the volume; we return work that is checked before it ever reaches you. Accuracy is the product, not an afterthought." },
   { idx: "02", Icon: Headphones, img: DHITI_IMAGES.svc2, tag: "A calm, trained front line for customers.", shot: "A team member on a headset, mid-call", t: "Customer & Process Support", b: "Phone and written support, query handling and follow ups for businesses that need a dependable front line. Calm, trained and consistent, so your customers get the same quality of answer every time, no matter who picks up." },
   { idx: "03", Icon: ShieldCheck, img: DHITI_IMAGES.svc3, tag: "An independent second pass on every output.", shot: "Two people checking work on one screen", t: "Quality & Audit", b: "Checking, verification and compliance passes on operational work, where accuracy matters more than speed. A second set of eyes that catches what a busy team misses, before a small error becomes an expensive one." },
-  { idx: "04", Icon: Building2, img: DHITI_IMAGES.svc4, tag: "A dedicated, embedded extension of your team.", shot: "A small team working together at desks", t: "Group & Internal Operations", b: "Ongoing operational support for the companies in our group, run as a dedicated extension of their team. Same standards, same accountability. This is where every new process is proven before we offer it outside." },
+  { idx: "04", Icon: Building2, img: DHITI_IMAGES.svc4, tag: "A dedicated, embedded extension of your team.", shot: "A small team working together at desks", t: "Group & Internal Operations", b: "Ongoing operational support run as a dedicated, embedded extension of your team. The same standards and accountability on every process, proven on real operations and held to the last detail." },
 ];
 
 const STEPS = [
@@ -262,12 +262,6 @@ export default function DhitiSite() {
               <motion.a href="#business" className="dh-btn dh-btn-primary" onClick={go("business")} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>Bring your work to us <ArrowUpRight size={18} /></motion.a>
               <motion.a href="#careers" className="dh-btn dh-btn-glass" onClick={go("careers")} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>Apply for training <ArrowRight size={17} /></motion.a>
             </div>
-            <div className="dh-hero-logos" data-reveal style={{ "--d": 4 }}>
-              <div className="lbl">Operations we run for our group</div>
-              <div className="row">
-                {DHITI_LOGOS.filter((l) => !l.dark).map((l, i) => <img key={i} src={l.src} alt={l.name} />)}
-              </div>
-            </div>
           </div>
           <div className="dh-hero-visual" data-reveal style={{ "--d": 2 }}>
             <div className="dh-hv-blob" />
@@ -300,9 +294,9 @@ export default function DhitiSite() {
         </div>
       </section>
 
-      {/* GROUP COMPANIES (continuous marquee) */}
+      {/* CLIENT LOGOS (continuous marquee) */}
       <section className="dh-marquee">
-        <div className="dh-marquee-label">The companies we run operations for <b>·</b> our group, from day one</div>
+        <div className="dh-marquee-label">Brands that trust us</div>
         <div className="dh-track-wrap">
           <div className="dh-track">
             {[...DHITI_LOGOS, ...DHITI_LOGOS].map((g, i) => (
@@ -352,7 +346,7 @@ export default function DhitiSite() {
             <div className="dh-story-body">
               <p data-reveal>Dhiti Services began with a single question: what does welfare look like ten years from now, not just on the day it is handed over? Most help fades the moment the funding stops. We wanted to build something that keeps paying, month after month, long after the first gesture is forgotten.</p>
               <p data-reveal style={{ "--d": 1 }}>So we did the opposite of what most companies do. Instead of opening a city office and asking people to travel to it, we built the work where the people already are. <strong>The work comes to them. The wages stay local. The skills grow at home.</strong></p>
-              <p data-reveal style={{ "--d": 2 }}>We recruit locally. We train properly. We put people to work on real operations, first for the companies in our own group, then for outside clients who need reliable, well managed execution. The name <strong>Dhiti</strong> means steadfastness and resolve. That is the standard we hold every piece of work to.</p>
+              <p data-reveal style={{ "--d": 2 }}>We recruit locally. We train properly. We put people to work on real operations for clients who need reliable, well managed execution. The name <strong>Dhiti</strong> means steadfastness and resolve. That is the standard we hold every piece of work to.</p>
               <p data-reveal style={{ "--d": 3 }}>No one should have to leave home to do work that matters. That is the entire premise, and everything here is built to prove it.</p>
             </div>
           </div>
